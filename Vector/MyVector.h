@@ -55,6 +55,8 @@ public:
     class Iterator {
 
     public:
+        Iterator();
+
         Iterator(ValueType *k) : _value(k) {};
 
         Iterator(const Iterator &it) : _value(it._value) {};

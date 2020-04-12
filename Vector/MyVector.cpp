@@ -9,10 +9,10 @@ _size(size), _strategy(strategy), _coef(coef) {
     } else
         this->_capacity = std::ceil(_size*_coef);
 
-    _data = new ValueType[_capacity];
+    this->_data = new ValueType[_capacity];
 
     for (size_t i = 0; i < _size; ++i) {
-        _data[i] = value;
+        this->_data[i] = value;
     }
 }
 
@@ -57,17 +57,17 @@ MyVector::MyVector(const MyVector &copy) {
 
 void MyVector::reserve(const size_t capacity) {
     if(_size < capacity) {
-        ValueType *newData = new ValueType[capacity];
-        memcpy(newData, _data, _size * sizeof(ValueType));
+        ValueType *_newData = new ValueType[capacity];
+        memcpy(_newData, _data, _size * sizeof(ValueType));
         delete[] _data;
-        this->_data = newData;
+        this->_data = _newData;
         this->_capacity = capacity;
     }
     else if(_size > capacity) {
-        ValueType *tempdata = new ValueType[capacity];
-        memcpy(tempdata, _data, capacity * sizeof(ValueType));
+        ValueType *_newData = new ValueType[capacity];
+        memcpy(_newData, _data, capacity * sizeof(ValueType));
         delete[] _data;
-        this->_data = tempdata;
+        this->_data = _newData;
         this->_size = capacity;
         this->_capacity = capacity;
     }
@@ -137,20 +137,20 @@ void MyVector::erase(const size_t i, const size_t len) {
 long long int MyVector::find(const ValueType &value, bool isBegin) const {
     if (isBegin) {
         for (size_t i = 0; i < _size; ++i)
-            if (_data[i] == value)
+            if (this->_data[i] == value)
                 return i;
     }
     else {
         for (size_t i = _size - 1; i > 0; --i)
-            if (_data[i] == value)
+            if (this->_data[i] == value)
                 return i;
     }
     return -1;
 }
 void MyVector::resize(const size_t size) {
     if(loadFactor(size) > 1) {
-        _capacity = size;
-        _capacity *= std::ceil(_coef);
+        this->_capacity = size;
+        this->_capacity *= std::ceil(_coef);
 
         ValueType* newData = new ValueType[_capacity];
         memcpy(newData, _data, size * sizeof(ValueType));
@@ -158,12 +158,12 @@ void MyVector::resize(const size_t size) {
         this->_data = newData;
 
         for(size_t i = _size; i < size; ++i){
-            _data[i] = 0.0;
+            this->_data[i] = 0.0;
         }
         this->_size = size;
     }
     else if(loadFactor(size) < 1/(_coef * _coef)) {
-        _capacity *= 0.5;
+        this->_capacity *= 0.5;
         ValueType* newData = new ValueType[_capacity];
         memcpy(newData, _data, size * sizeof(ValueType));
         delete[] _data;
@@ -172,7 +172,7 @@ void MyVector::resize(const size_t size) {
     }
     else {
         for(size_t i = _size; i < size; ++i){
-            _data[i] = 0.0;
+            this->_data[i] = 0.0;
         }
         this->_size = size;
     }
@@ -182,27 +182,24 @@ MyVector MyVector::sortedSquares(const MyVector &vec, SortedStrategy strategy) {
     for(size_t i = 0; i < vec.size(); ++i){
         vec[i] *= vec[i];
     }
-    switch(strategy){
-        case (SortedStrategy::Rising):
-            for(size_t j = 1; j < vec.size(); ++j)
-            {
-                for (size_t i = 0; i < vec.size() - j; ++i) {
-                    if (vec[i] > vec[i + 1]) {
-                        std::swap(vec[i], vec[i + 1]);
-                    }
+    if(strategy == SortedStrategy::Rising) {
+        for (size_t j = 1; j < vec.size(); ++j) {
+            for (size_t i = 0; i < vec.size() - j; ++i) {
+                if (vec[i] > vec[i + 1]) {
+                    std::swap(vec[i], vec[i + 1]);
                 }
             }
-            break;
-        case (SortedStrategy::Decrising):
-            for(size_t j = 1; j < vec.size(); ++j)
-            {
-                for (size_t i = 0; i < vec.size() - j; ++i) {
-                    if (vec[i] < vec[i + 1]) {
-                        std::swap(vec[i], vec[i + 1]);
-                    }
+        }
+    } else if(strategy == SortedStrategy::Decrising) {
+        for(size_t j = 1; j < vec.size(); ++j)
+        {
+            for (size_t i = 0; i < vec.size() - j; ++i) {
+                if (vec[i] < vec[i + 1]) {
+                    std::swap(vec[i], vec[i + 1]);
                 }
             }
-            break;
+        }
     }
+
     return MyVector();
 }
