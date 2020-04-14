@@ -4,6 +4,9 @@
 
 MyVector::MyVector(size_t size, ValueType value, ResizeStrategy strategy, float coef) :
 _size(size), _strategy(strategy), _coef(coef) {
+    this->_coef = coef;
+    this->_size = size;
+    this->_strategy = strategy;
     if(_size == 0) {
         this->_capacity = 1;
     } else
@@ -50,6 +53,7 @@ MyVector::MyVector(const MyVector &copy) {
     this->_capacity = copy._capacity;
     this->_strategy = copy._strategy;
     this->_coef = copy._coef;
+    _data = new ValueType[_capacity];
     memcpy(_data, copy._data, _size * sizeof(ValueType));
 }
 
@@ -78,7 +82,7 @@ void MyVector::insert(const size_t index, const ValueType &value) {
         return;
     }
     if(_size == _capacity) {
-        reserve(_capacity + 1);
+        reserve(_capacity * 2);
         for(size_t j = _size; j > index; --j)
             _data[j] = _data[j - 1];
         this->_data[index] = value;
@@ -116,8 +120,8 @@ void MyVector::clear() {
 }
 
 void MyVector::popBack() {
-    ValueType* newData = new ValueType[_capacity];
-    memcpy(newData, _data, sizeof(ValueType)* (_size - 1));
+    ValueType *newData = new ValueType[_capacity];
+    memcpy(newData, _data, _size - 1);
     delete[] _data;
     this->_data = newData;
     --this->_size;
