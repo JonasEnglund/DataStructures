@@ -50,7 +50,6 @@ MyVector::MyVector(const MyVector &copy) {
     this->_capacity = copy._capacity;
     this->_strategy = copy._strategy;
     this->_coef = copy._coef;
-    this->_data = nullptr;
     memcpy(_data, copy._data, _size * sizeof(ValueType));
 }
 
