@@ -4,7 +4,7 @@
 // потом поменяем на шаблоны
 using ValueType = double;
 
-class LinkedList
+class DoubleLinkedList
 {
 	// класс узла списка
 	// по своей сути, может содержать любые данные,
@@ -12,7 +12,7 @@ class LinkedList
 	// поле с ключем в узел и, с учетом этого, поменять методы LinkedList 
 	// (доступ по ключу, поиск по ключу и т.д.)
 	struct Node {
-		Node(const ValueType& value, Node* next = nullptr);
+		Node(const ValueType& value, Node* next = nullptr, Node* prev = nullptr);
 		~Node();
 
 		void insertNext(const ValueType& value);
@@ -20,24 +20,25 @@ class LinkedList
 
 		ValueType value;
 		Node* next;
+		Node* prev;
 	};
 
 public:
 	////
-	LinkedList();
-	LinkedList(const LinkedList& copyList);
-	LinkedList& operator=(const LinkedList& copyList);
+	DoubleLinkedList();
+	DoubleLinkedList(const DoubleLinkedList& copyList);
+	DoubleLinkedList& operator=(const DoubleLinkedList& copyList);
 
-	LinkedList(LinkedList&& moveList) noexcept;
-	LinkedList& operator=(LinkedList&& moveList) noexcept;
+	DoubleLinkedList(DoubleLinkedList&& moveList) noexcept;
+	DoubleLinkedList& operator=(DoubleLinkedList&& moveList) noexcept;
 
-	~LinkedList();
+	~DoubleLinkedList();
 	////
 
 	// доступ к значению элемента по индексу
 	ValueType& operator[](const size_t pos) const;
 	// доступ к узлу по индексу
-	LinkedList::Node* getNode(const size_t pos) const;
+	DoubleLinkedList::Node* getNode(const size_t pos) const;
 	
 	// вставка элемента по индексу, сначала ищем, куда вставлять (О(n)), потом вставляем (O(1))
 	void insert(const size_t pos, const ValueType& value);
@@ -60,14 +61,14 @@ public:
 
 	// разворот списка
 	void reverse();						// изменение текущего списка
-	LinkedList reverse() const;			// полчение нового списка (для константных объектов)
-	LinkedList getReverseList() const;	// чтобы неконстантный объект тоже мог возвращать новый развернутый список
+	DoubleLinkedList reverse() const;			// полчение нового списка (для константных объектов)
+	DoubleLinkedList getReverseList() const;	// чтобы неконстантный объект тоже мог возвращать новый развернутый список
 
 	size_t size() const;
 private:
-	Node*	_head;
-	size_t	_size;
-
+	Node* _head;
+	size_t _size;
+    Node* _back;
 	void forceNodeDelete(Node* node);
 };
 
