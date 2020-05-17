@@ -34,6 +34,7 @@ public:
     size_t size() const;
     float loadFactor(size_t size);
     ValueType& operator[](const size_t i) const;
+    ValueType& operator[](const size_t i) ;
 
     void pushBack(const ValueType& value);
     void insert(const size_t i, const ValueType& value);
