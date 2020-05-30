@@ -1,3 +1,0 @@
-C:/Laba/zrl/DataStructures/Vector/cmake-build-debug/CMakeFiles/Vector.dir
-C:/Laba/zrl/DataStructures/Vector/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Laba/zrl/DataStructures/Vector/cmake-build-debug/CMakeFiles/rebuild_cache.dir
