@@ -66,7 +66,7 @@ public:
 	size_t size() const;
 private:
 	Node*	_head;
-	size_t	_size;
+	static size_t	_size;
 
 	void forceNodeDelete(Node* node);
 };

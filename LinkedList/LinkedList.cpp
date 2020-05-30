@@ -1,6 +1,7 @@
 #include "LinkedList.h"
 #include <cassert>
 #include <iostream>
+#include <exception>
 
 LinkedList::Node::Node(const ValueType& value, Node* next)
 {
@@ -17,6 +18,7 @@ void LinkedList::Node::insertNext(const ValueType& value)
 {
 	Node* newNode = new Node(value, this->next);
 	this->next = newNode;
+    ++_size;
 }
 
 void LinkedList::Node::removeNext()
@@ -27,13 +29,17 @@ void LinkedList::Node::removeNext()
 	this->next = newNext;
 }
 
-LinkedList::LinkedList(): _head(nullptr), _size(0)
+LinkedList::LinkedList(): _head(nullptr)
 {
-	
+    _size = 0;
 }
 
 LinkedList::LinkedList(const LinkedList& copyList)
 {
+    if(&copyList == nullptr)
+        throw std::invalid_argument("CopyList is empty");
+    if(&copyList == this)
+        throw std::invalid_argument("Nothing to copy");
 	this->_size = copyList._size;
 	if (this->_size == 0) {
 		this->_head = nullptr;
@@ -101,10 +107,10 @@ ValueType& LinkedList::operator[](const size_t pos) const
 LinkedList::Node* LinkedList::getNode(const size_t pos) const
 {
 	if (pos < 0) {
-		assert(pos < 0);
+	    throw std::invalid_argument("Position < 0");
 	}
 	else if (pos >= this->_size) {
-		assert(pos >= this->_size);
+        throw std::invalid_argument("Position > size");
 	}
 
 	Node* bufNode = this->_head;
@@ -118,10 +124,10 @@ LinkedList::Node* LinkedList::getNode(const size_t pos) const
 void LinkedList::insert(const size_t pos, const ValueType& value)
 {
 	if (pos < 0) {
-		assert(pos < 0);
+        throw std::invalid_argument("Position < 0");
 	}
 	else if (pos > this->_size) {
-		assert(pos > this->_size);
+        throw std::invalid_argument("Position > size");
 	}
 
 	if (pos == 0) {
@@ -159,6 +165,8 @@ void LinkedList::pushFront(const ValueType& value)
 
 void LinkedList::remove(const size_t pos)
 {
+    if(pos > _size || pos < 0)
+        throw std::invalid_argument("Position is incorrect");
     if (_size == 1) {
         _head->value = 0;
         _head = nullptr;
@@ -180,6 +188,8 @@ void LinkedList::remove(const size_t pos)
 
 void LinkedList::removeNextNode(Node* node)
 {
+    if(node == nullptr)
+        throw std::invalid_argument("Node is empty");
     Node* save = node->next;
     node->next = node->next->next;
     save->value = 0;
@@ -265,7 +275,7 @@ size_t LinkedList::size() const
 void LinkedList::forceNodeDelete(Node* node)
 {
 	if (node == nullptr) {
-		return;
+	    throw std::invalid_argument("Node is empty");
 	}
 
 	Node* nextDeleteNode = node->next;
