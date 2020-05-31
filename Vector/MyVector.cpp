@@ -94,20 +94,15 @@ MyVector::MyVector(const MyVector &copy) {
 }
 
 void MyVector::reserve(const size_t capacity) {
-    if (_size < capacity) {
         ValueType *_newData = new ValueType[capacity];
+        if(_size >= capacity) {
+            memcpy(_newData, _data, capacity * sizeof(ValueType));
+            _size = capacity;
+        } else
         memcpy(_newData, _data, _size * sizeof(ValueType));
         delete[] _data;
         _data = _newData;
         _capacity = capacity;
-    } else if (_size >= capacity) {
-        ValueType *_newData = new ValueType[capacity];
-        memcpy(_newData, _data, capacity * sizeof(ValueType));
-        _size = capacity;
-        delete[] _data;
-        _data = _newData;
-        _capacity = capacity;
-    }
 }
 
 void MyVector::insert(const size_t index, const ValueType &value) {
@@ -135,31 +130,37 @@ void MyVector::insert(const size_t index, const MyVector &value) {
     if(index > _capacity - value.size()) {
         throw std::length_error("Index > size");
     }
+    else if(index == _size) for(size_t i = 0; i < value.size(); ++i) this->pushBack(value._data[i]);
+
     if(_size + value.size() >= _capacity)
         switch(_strategy) {
             case ResizeStrategy::Multiplicative: {
-                while(_capacity <= _size + value.size())
-                    _capacity *= _coef;
+                _capacity = (_size + value.size()) * _coef;
                 break;
             }
             case ResizeStrategy::Additive: {
-                while(_capacity <= _size + value.size())
-                    _capacity += _coef;
+                _capacity = (_size + value.size()) + _coef;
                 break;
             }
         }
     reserve(_capacity);
-    for(size_t i = 0; i < value.size(); ++i)
-    {
-        for(size_t j = _size; j > index + i; --j)
-            _data[j] = _data[j - 1];
-        _data[index + i] = value._data[i];
-        ++_size;
-    }
+
+    ValueType *buf = new ValueType[_capacity];
+
+    for(size_t i = 0; i < index; ++i)
+        buf[i] = _data[i];
+    for(size_t i = index; i < value.size() + index; ++i)
+        buf[i] = value._data[i - index];
+    for(size_t i = index + value.size(); i < _size + value.size(); ++i)
+        buf[i] = _data[i - value.size()];
+    delete[] _data;
+    _data = buf;
+    _size += value.size();
 }
 
 MyVector &MyVector::operator=(const MyVector &copy) {
     if(&copy == this || &copy == nullptr) throw std::invalid_argument("Nothing to copy");
+
     delete[] _data;
     this->_size = copy._size;
     this->_capacity = copy._capacity;
@@ -202,11 +203,36 @@ void MyVector::erase(const size_t i) {
     popBack();
 }
 
-void MyVector::erase(const size_t i, const size_t len) {
-    if(_size <= i + len) throw std::length_error("Index > size");
+void MyVector::erase(const size_t index, const size_t len) {
+    if(_capacity <= index + len) throw std::length_error("Index > size");
+    size_t lenght = len;
+    if(_size < len) lenght = _size;
 
-    for(size_t j = 0; j < len; ++j)
-        this->erase(i);
+    ValueType* buf = new ValueType[_capacity];
+
+    for(size_t i = 0; i < index; ++i)
+        buf[i] = _data[i];
+    for(size_t i = index + lenght; i < _size; ++i)
+        buf[i - lenght] = _data[i];
+    delete[] _data;
+    _data = buf;
+    _size -= lenght;
+
+    if(loadFactor(_size) <= 1/ceil((_coef * _coef))) {
+        switch (_strategy) {
+            case ResizeStrategy::Multiplicative: {
+                while(loadFactor(_size) <= 1/ceil((_coef * _coef)))
+                    _capacity /= _coef;
+                break;
+            }
+            case ResizeStrategy::Additive: {
+                while(loadFactor(_size) <= 1/ceil((_coef * _coef)))
+                    _capacity -= _coef;
+                break;
+            }
+        }
+    }
+    reserve(ceil(_capacity));
 }
 
 long long int MyVector::find(const ValueType &value, bool isBegin) const {
@@ -222,42 +248,40 @@ long long int MyVector::find(const ValueType &value, bool isBegin) const {
     }
     return -1;
 }
-void MyVector::resize(const size_t size) {
+void MyVector::resize(const size_t size, const ValueType null) {
     if(size > _size && size > _capacity) {
         switch (_strategy) {
             case ResizeStrategy::Multiplicative: {
-                while (loadFactor(size) >= 1)
-                    _capacity = ceil(_capacity * _coef);
+                _capacity = size * _coef;
                 break;
             }
             case ResizeStrategy::Additive: {
-                while (loadFactor(size) >= 1)
-                    _capacity += _coef;
+                _capacity = size + _coef;
                 break;
             }
         }
         reserve(_capacity);
 
         for (size_t i = _size; i < size; ++i)
-            _data[i] = 0;
+            _data[i] = null;
     }
 
     else if(size > _size && size < _capacity) {
         for (size_t i = _size; i < size; ++i)
-            _data[i] = 0;
+            _data[i] = null;
     }
 
     else if(size < _size) {
         _size = size;
-        if(loadFactor(size) < 1/ceil((_coef * _coef))) {
+        if(loadFactor(size) <= 1/ceil((_coef * _coef))) {
             switch (_strategy) {
                 case ResizeStrategy::Multiplicative: {
-                    while(loadFactor(size) < 1/ceil((_coef * _coef)))
+                    while(loadFactor(size) <= 1/ceil((_coef * _coef)))
                         _capacity /= _coef;
                     break;
                 }
                 case ResizeStrategy::Additive: {
-                    while(loadFactor(size) < 1/ceil((_coef * _coef)))
+                    while(loadFactor(size) <= 1/ceil((_coef * _coef)))
                         _capacity -= _coef;
                     break;
                 }
@@ -277,30 +301,30 @@ MyVector MyVector::sortedSquares(const MyVector &vec, SortedStrategy strategy) {
 
     switch(strategy) {
         case(SortedStrategy::Rising) :
-            for(size_t i = vec.size() - 1; i <= 0; --i) {
-                if(countRight < countLeft) {
-                    buf._data[i] = countLeft;
-                    countLeft = vec._data[Left] * vec._data[Left];
-                    ++Left;
+            for(int i = vec.size() - 1; i >= 0; --i) {
+                if(Right < Left) {
+                    buf._data[i] = Left;
+                    ++countLeft;
+                    Left = vec._data[countLeft] * vec._data[countLeft];
                 }
                 else {
-                    buf._data[i] = countRight;
-                    countRight = vec._data[Right] * vec._data[Right];
-                    --Right;
+                    buf._data[i] = Right;
+                    --countRight;
+                    Right = vec._data[countRight] * vec._data[countRight];
                 }
             }
             break;
         case(SortedStrategy::Decrising) :
-            for(size_t i = 0; i < vec._size; ++i) {
-                if(countRight < countLeft) {
-                    buf._data[i] = countLeft;
-                    countLeft = vec._data[Left] * vec._data[Left];
-                    ++Left;
+            for(int i = 0; i < vec._size; ++i) {
+                if(Right < Left) {
+                    buf._data[i] = Left;
+                    ++countLeft;
+                    Left = vec._data[countLeft] * vec._data[countLeft];
                 }
                 else {
-                    buf._data[i] = countRight;
-                    countRight = vec._data[Right] * vec._data[Right];
-                    --Right;
+                    buf._data[i] = Right;
+                    --countRight;
+                    Right = vec._data[countRight] * vec._data[countRight];
                 }
             }
             break;

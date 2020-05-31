@@ -17,21 +17,12 @@ void show(MyVector &link)
 int main()
 {
     MyVector a;
-    MyVector b;
-    b.pushBack(4);
-    b.pushBack(6);
-    b.pushBack(8);
-    b.pushBack(5);
-    b.pushBack(2);
+    a.pushBack(-2);
     a.pushBack(3);
-    a.pushBack(3);
-    a.pushBack(3);
-    a.pushBack(3);
-    a.pushBack(3);
-    a.pushBack(3);
-    a.pushBack(3);
+    a.pushBack(1);
+    a.pushBack(-5);
+    a.pushBack(6);
     show(a);
+    MyVector b = a.sortedSquares(a, SortedStrategy::Rising);
     show(b);
-    a.insert(3, b);
-    show(a);
 }

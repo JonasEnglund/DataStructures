@@ -48,7 +48,7 @@ public:
 
     void reserve(const size_t capacity);
 
-    void resize(const size_t size);
+    void resize(const size_t size, const ValueType null = 0.0);
 
     MyVector sortedSquares(const MyVector& vec, SortedStrategy strategy);
     void clear();
@@ -86,6 +86,7 @@ public:
 
     Iterator begin() { return Iterator(_data); };
     Iterator end() { return Iterator(_data + _size); };
+    void Sort(ValueType* data, size_t l, size_t r,bool* mew, SortedStrategy sstrategy, size_t Q);
 
 private:
     ValueType* _data;
