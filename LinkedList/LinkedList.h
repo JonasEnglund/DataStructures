@@ -1,6 +1,6 @@
 #pragma once
 
-#include <cstdlib>
+#include <cstddef>
 // потом поменяем на шаблоны
 using ValueType = double;
 
@@ -41,7 +41,7 @@ public:
 	// вставка элемента по индексу, сначала ищем, куда вставлять (О(n)), потом вставляем (O(1))
 	void insert(const size_t pos, const ValueType& value);
 	// вставка элемента после узла, (O(1))
-	static void insertAfterNode(Node* node, const ValueType& value);
+	void insertAfterNode(Node* node, const ValueType& value);
 	// вставка в конец (О(n))
 	void pushBack(const ValueType& value);
 	// вставка в начало (О(1))
@@ -57,7 +57,6 @@ public:
 	long long int findIndex(const ValueType& value) const;
 	Node* findNode(const ValueType& value) const;
 
-	void showList();
 	// разворот списка
 	void reverse();						// изменение текущего списка
 	LinkedList reverse() const;			// полчение нового списка (для константных объектов)
@@ -66,7 +65,7 @@ public:
 	size_t size() const;
 private:
 	Node*	_head;
-	static size_t	_size;
+	size_t	_size;
 
 	void forceNodeDelete(Node* node);
 };

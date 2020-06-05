@@ -1,7 +1,7 @@
 #pragma once
 #ifndef CLIONPROJECTS_MYVECTOR_H
 #define CLIONPROJECTS_MYVECTOR_H
-#include <cstdlib>
+#include <cstddef>
 #include <cmath>
 #include <cstring>
 
@@ -33,6 +33,7 @@ public:
     size_t capacity() const;
     size_t size() const;
     float loadFactor(size_t size);
+    float loadFactor();
     ValueType& operator[](const size_t i) const;
     ValueType& operator[](const size_t i) ;
 

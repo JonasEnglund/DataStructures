@@ -1,4 +1,4 @@
-#include "LinkedList.h"
+#include "DoubleLinkedList.h"
 #include <cassert>
 
 DoubleLinkedList::Node::Node(const ValueType& value, Node* next, Node* prev)
@@ -33,7 +33,7 @@ DoubleLinkedList::DoubleLinkedList(): _head(nullptr), _size(0), _back(nullptr)
 	
 }
 
-DoubleLinkedList::DoubleLinkedList(const LinkedList& copyList)
+DoubleLinkedList::DoubleLinkedList(const DoubleLinkedList& copyList)
 {
 	this->_size = copyList._size;
 	if (this->_size == 0) {
@@ -168,7 +168,7 @@ void DoubleLinkedList::pushFront(const ValueType& value)
 	++_size;
 }
 
-void DoublyLinkedList::removeFront()
+void DoubleLinkedList::removeFront()
 {
     if (_head == nullptr)
         return;
@@ -179,14 +179,14 @@ void DoublyLinkedList::removeFront()
     --this->_size;
 }
 
-void DoublyLinkedList::removeBack()
+void DoubleLinkedList::removeBack()
 {
     if ( _back== nullptr)
         return;
 
     Node* newNode = _back;
     _back = _back->prev;
-    delete NewNode;
+    delete newNode;
     --this->_size;
 }
 
@@ -250,14 +250,14 @@ void DoubleLinkedList::reverse()
 
 DoubleLinkedList DoubleLinkedList::getReverseList() const
 {
-    DoublyLinkedList newlist(*this);
+    DoubleLinkedList newlist(*this);
     Node* newNode = newlist._head;
     newlist._head = newlist._back;
-    list._back = newNode;
+    newlist._back = newNode;
 
     reverse();
 
-    return list;
+    return newlist;
 }
 
 DoubleLinkedList DoubleLinkedList::reverse() const

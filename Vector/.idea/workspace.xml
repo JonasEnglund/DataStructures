@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BuildServerSettings">
+    <option name="LOGIN" value="" />
+    <option name="SERVER_URL" value="http://buildserver" />
+    <option name="REMEMBER_ME" value="true" />
+    <option name="USE_IDEA_PROXY_SETTINGS" value="true" />
+    <option name="INSPECTIONS_BUILD_TYPE_IDS" />
+    <option name="DUPLICATES_BUILD_TYPE_IDS" />
+    <option name="ENABLE_SUITABLE_CONFIGURATION_CACHING" value="true" />
+    <option name="COVERAGE_SETTINGS" />
+    <option name="TEST_STATUS_ENABLED" value="true" />
+    <option name="TEST_STATUS_SHOW_SUCCESSFUL" value="false" />
+    <option name="POSTPONE_SUITABLE_CONFIGURATIONS_SEARCH" value="false" />
+    <option name="ARTIFACTS_BUILD_TYPE_IDS" />
+    <option name="PERFORM_COMMIT_IF_SUCCESSFUL" value="true" />
+    <option name="PERFORM_COMMIT_IF_NO_NEW_FAILED_TESTS" value="false" />
+    <option name="REQUEST_CONFIRMATON" value="false" />
+    <option name="PRE_TESTED_COMMIT" value="true" />
+    <option name="FILTER_BY_STATUS" value="false" />
+    <option name="FILTER_MARKED_AS_FIXED" value="false" />
+    <option name="SHOW_CLOSE_PROMPT" value="true" />
+    <option name="TOOL_WINDOW_SELECTED_CONTENT_INDEX" value="0" />
+    <option name="FILTER_BY_CURRENT_PROJECT" value="true" />
+    <option name="showStatusBarWidget" value="true" />
+  </component>
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="Vector" targetName="Vector" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="55f1aa48-88e0-4765-adc0-4ba7be2f8b87" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../LinkedList/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LinkedList/DoubleLinkedList/DoubleLinkedList.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LinkedList/DoubleLinkedList/DoubleLinkedList.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LinkedList/LinkedList.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../LinkedList/LinkedList.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LinkedList/LinkedList.h" beforeDir="false" afterPath="$PROJECT_DIR$/../LinkedList/LinkedList.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyVector.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/MyVector.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyVector.h" beforeDir="false" afterPath="$PROJECT_DIR$/MyVector.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="5ijqktsm" />
+  </component>
+  <component name="ProjectId" id="1cjVkw2qcJ5hlhZdFxKS7voFTpe" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Vector" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Vector" TARGET_NAME="Vector" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Vector" RUN_TARGET_NAME="Vector">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="55f1aa48-88e0-4765-adc0-4ba7be2f8b87" name="Default Changelist" comment="" />
+      <created>1591042136366</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1591042136366</updated>
+      <workItem from="1591042138446" duration="870000" />
+      <workItem from="1591303686605" duration="2709000" />
+      <workItem from="1591308465681" duration="7561000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2980" y="275" key="FileChooserDialogImpl" timestamp="1591308462236">
+      <screen x="1920" y="0" width="2560" height="1040" />
+    </state>
+    <state x="2980" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.2560.1040@1920.0.2560.1040" timestamp="1591308462236" />
+    <state width="2517" height="282" key="GridCell.Tab.0.bottom" timestamp="1591308463750">
+      <screen x="1920" y="0" width="2560" height="1040" />
+    </state>
+    <state width="2517" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.2560.1040@1920.0.2560.1040" timestamp="1591308463750" />
+    <state width="2517" height="282" key="GridCell.Tab.0.center" timestamp="1591308463750">
+      <screen x="1920" y="0" width="2560" height="1040" />
+    </state>
+    <state width="2517" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.2560.1040@1920.0.2560.1040" timestamp="1591308463750" />
+    <state width="2517" height="282" key="GridCell.Tab.0.left" timestamp="1591308463750">
+      <screen x="1920" y="0" width="2560" height="1040" />
+    </state>
+    <state width="2517" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.2560.1040@1920.0.2560.1040" timestamp="1591308463750" />
+    <state width="2517" height="282" key="GridCell.Tab.0.right" timestamp="1591308463750">
+      <screen x="1920" y="0" width="2560" height="1040" />
+    </state>
+    <state width="2517" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.2560.1040@1920.0.2560.1040" timestamp="1591308463750" />
+    <state width="640" height="204" key="ImportCMakeProjectWizard.bottomPanel" timestamp="1591308463728">
+      <screen x="1920" y="0" width="2560" height="1040" />
+    </state>
+    <state width="640" height="204" key="ImportCMakeProjectWizard.bottomPanel/0.0.1920.1040/1920.0.2560.1040@1920.0.2560.1040" timestamp="1591308463728" />
+    <state width="640" height="476" key="ImportCMakeProjectWizard.topPanel" timestamp="1591308463728">
+      <screen x="1920" y="0" width="2560" height="1040" />
+    </state>
+    <state width="640" height="476" key="ImportCMakeProjectWizard.topPanel/0.0.1920.1040/1920.0.2560.1040@1920.0.2560.1040" timestamp="1591308463728" />
+  </component>
+</project>

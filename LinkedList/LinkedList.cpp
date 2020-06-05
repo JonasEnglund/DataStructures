@@ -18,7 +18,6 @@ void LinkedList::Node::insertNext(const ValueType& value)
 {
 	Node* newNode = new Node(value, this->next);
 	this->next = newNode;
-    ++_size;
 }
 
 void LinkedList::Node::removeNext()
@@ -29,9 +28,9 @@ void LinkedList::Node::removeNext()
 	this->next = newNext;
 }
 
-LinkedList::LinkedList(): _head(nullptr)
+LinkedList::LinkedList(): _head(nullptr), _size(0)
 {
-    _size = 0;
+
 }
 
 LinkedList::LinkedList(const LinkedList& copyList)
@@ -39,8 +38,9 @@ LinkedList::LinkedList(const LinkedList& copyList)
     if(&copyList == nullptr)
         throw std::invalid_argument("CopyList is empty");
     if(&copyList == this)
-        throw std::invalid_argument("Nothing to copy");
+        return;
 	this->_size = copyList._size;
+
 	if (this->_size == 0) {
 		this->_head = nullptr;
 		return;
@@ -52,15 +52,15 @@ LinkedList::LinkedList(const LinkedList& copyList)
 	Node* currentCopyNode = copyList._head;
 
 	while (currentCopyNode->next) {
+        currentCopyNode = currentCopyNode->next;
 		currentNode->next = new Node(currentCopyNode->value);
-		currentCopyNode = currentCopyNode->next;
 		currentNode = currentNode->next;
 	}
 }
 
 LinkedList& LinkedList::operator=(const LinkedList& copyList)
 {
-	if (this == &copyList) {
+	if (this == &copyList || &copyList == nullptr) {
 		return *this;
 	}
 	LinkedList bufList(copyList);
@@ -106,10 +106,7 @@ ValueType& LinkedList::operator[](const size_t pos) const
 
 LinkedList::Node* LinkedList::getNode(const size_t pos) const
 {
-	if (pos < 0) {
-	    throw std::invalid_argument("Position < 0");
-	}
-	else if (pos >= this->_size) {
+	if (pos >= this->_size) {
         throw std::invalid_argument("Position > size");
 	}
 
@@ -123,10 +120,7 @@ LinkedList::Node* LinkedList::getNode(const size_t pos) const
 
 void LinkedList::insert(const size_t pos, const ValueType& value)
 {
-	if (pos < 0) {
-        throw std::invalid_argument("Position < 0");
-	}
-	else if (pos > this->_size) {
+	if (pos > this->_size) {
         throw std::invalid_argument("Position > size");
 	}
 
@@ -145,7 +139,9 @@ void LinkedList::insert(const size_t pos, const ValueType& value)
 
 void LinkedList::insertAfterNode(Node* node, const ValueType& value)
 {
+    assert(node == nullptr);
 	node->insertNext(value);
+	++_size;
 }
 
 void LinkedList::pushBack(const ValueType& value)
@@ -165,12 +161,10 @@ void LinkedList::pushFront(const ValueType& value)
 
 void LinkedList::remove(const size_t pos)
 {
-    if(pos > _size || pos < 0)
+    if(pos > _size)
         throw std::invalid_argument("Position is incorrect");
     if (_size == 1) {
-        _head->value = 0;
-        _head = nullptr;
-        --_size;
+        removeFront();
     }
     else {
         Node *current = this->_head;
@@ -188,33 +182,27 @@ void LinkedList::remove(const size_t pos)
 
 void LinkedList::removeNextNode(Node* node)
 {
-    if(node == nullptr)
-        throw std::invalid_argument("Node is empty");
-    Node* save = node->next;
-    node->next = node->next->next;
-    save->value = 0;
-    save = nullptr;
+    if(node == _head) removeFront();
+    else {
+        Node *save = node->next;
+        node->next = node->next->next;
+        delete save;
+    }
 }
 
 void LinkedList::removeBack() {
-    if (_size == 1) {
-        _head->value = 0;
-        _head = nullptr;
-        --_size;
-    }
+    if (_size == 1)
+        removeFront();
     else
-    remove(this->size() - 1);
+        remove(_size - 1);
 }
 
 void LinkedList::removeFront() {
-    if (_size == 1) {
-        _head->value = 0;
-        _head = nullptr;
-    }
+    if(_head == nullptr) return;
     else {
-        Node *save = _head->next;
-        _head->value = 0;
-        _head = save;
+        Node *save = _head;
+        _head = save->next;
+        delete save;
     }
     --_size;
 }
@@ -274,25 +262,7 @@ size_t LinkedList::size() const
 
 void LinkedList::forceNodeDelete(Node* node)
 {
-	if (node == nullptr) {
-	    throw std::invalid_argument("Node is empty");
-	}
-
 	Node* nextDeleteNode = node->next;
 	delete node;
 	forceNodeDelete(nextDeleteNode);
-}
-
-void LinkedList::showList() {
-    Node* current = _head;
-    int counter = this->size();
-    std::cout << "Elements: ";
-    while(counter != 0) {
-        std::cout << current->value << ' ';
-        current = current->next;
-        --counter;
-    }
-    std::cout << std::endl;
-    std::cout << "Size: " << this->size();
-    std::cout << std::endl;
 }
