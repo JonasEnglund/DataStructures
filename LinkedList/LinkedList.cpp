@@ -158,10 +158,6 @@ void LinkedList::remove(const size_t pos)
         removeBack();
         return;
     }
-    Node* save = getNode(pos - 1);
-    save->removeNext();
-    --_size;
-/*
     Node *current = this->_head;
     int count = 0;
     while (count != pos - 1) {
@@ -173,7 +169,6 @@ void LinkedList::remove(const size_t pos)
     --_size;
 
     delete save;
-    */
 }
 
 void LinkedList::removeNextNode(Node* node)
