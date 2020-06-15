@@ -21,14 +21,12 @@ public:
 	Stack(const Stack& copyStack);
 	Stack& operator=(const Stack& copyStack);
 
-
 	Stack(Stack&& moveStack) noexcept;
 	Stack& operator=(Stack&& moveStack) noexcept;
 	~Stack();
 
 	void push(const ValueType& value);
 	void pop();
-
 	const ValueType& top() const;
 	bool isEmpty() const;
 	size_t size() const;

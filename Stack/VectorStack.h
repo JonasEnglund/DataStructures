@@ -1,25 +1,26 @@
 #pragma once
 
-#include "./../Vector/MyVector.h"
+#include <cstdlib>
+#include "MyVector.h"
 #include "StackImplementation.h"
 
 class VectorStack : public StackImplementation, public MyVector
 {
 public:
-    VectorStack();
+    VectorStack() {};
 
-    VectorStack(const VectorStack& copyVector);
+    VectorStack(VectorStack& copyVector) : MyVector(copyVector) {};
 
-    void push(const ValueType& value) override;
+    void push(const ValueType& value);
 
-    void pop() override;
+    void pop();
 
-    const ValueType &top() const override;
+    const ValueType &top() const;
 
-    bool isEmpty();
+    bool isEmpty() const;
 
-    std::size_t size() const override;
+    size_t size() const;
 
-    ~VectorStack() {};
+    ~VectorStack() override {};
 };
 

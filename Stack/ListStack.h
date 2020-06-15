@@ -1,24 +1,25 @@
 #pragma once
 
-#include "./../LinkedList/LinkedList.h"
+#include <cstdlib>
+#include "LinkedList.h"
 #include "StackImplementation.h"
 
 class ListStack : public StackImplementation, public LinkedList
 {
 public:
-    ListStack();
-    ListStack(const ListStack& copyList);
+    ListStack() {};
+    ListStack(const ListStack& copyList) : LinkedList(copyList) {};
 
-    void push(const ValueType& value) override;
+    void push(const ValueType& value);
 
-    void pop() override;
+    void pop();
 
-    const ValueType &top() const override;
+    const ValueType &top() const;
 
-    bool isEmpty();
+    bool isEmpty() const;
 
-    std::size_t size() const override;
+    size_t size() const;
 
-    ~ListStack() {};
+    ~ListStack() override {};
 };
 

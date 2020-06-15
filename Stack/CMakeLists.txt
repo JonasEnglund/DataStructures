@@ -1,0 +1,19 @@
+cmake_minimum_required(VERSION 3.16)
+project(Stack)
+
+set(CMAKE_CXX_STANDARD 14)
+
+include_directories(.)
+
+add_executable(Stack
+        LinkedList.cpp
+        LinkedList.h
+        ListStack.cpp
+        ListStack.h
+        MyVector.cpp
+        MyVector.h
+        Stack.cpp
+        Stack.h
+        StackImplementation.h
+        VectorStack.cpp
+        VectorStack.h)

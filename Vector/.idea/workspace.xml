@@ -35,16 +35,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55f1aa48-88e0-4765-adc0-4ba7be2f8b87" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../LinkedList/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LinkedList/DoubleLinkedList/DoubleLinkedList.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LinkedList/DoubleLinkedList/DoubleLinkedList.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LinkedList/LinkedList.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../LinkedList/LinkedList.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LinkedList/LinkedList.h" beforeDir="false" afterPath="$PROJECT_DIR$/../LinkedList/LinkedList.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyVector.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/MyVector.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyVector.h" beforeDir="false" afterPath="$PROJECT_DIR$/MyVector.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" />
-    </list>
+    <list default="true" id="55f1aa48-88e0-4765-adc0-4ba7be2f8b87" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,7 +84,7 @@
       <updated>1591042136366</updated>
       <workItem from="1591042138446" duration="870000" />
       <workItem from="1591303686605" duration="2709000" />
-      <workItem from="1591308465681" duration="7561000" />
+      <workItem from="1591308465681" duration="7815000" />
     </task>
     <servers />
   </component>
@@ -101,10 +92,10 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2980" y="275" key="FileChooserDialogImpl" timestamp="1591308462236">
+    <state x="2980" y="275" key="FileChooserDialogImpl" timestamp="1591316291749">
       <screen x="1920" y="0" width="2560" height="1040" />
     </state>
-    <state x="2980" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.2560.1040@1920.0.2560.1040" timestamp="1591308462236" />
+    <state x="2980" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.2560.1040@1920.0.2560.1040" timestamp="1591316291749" />
     <state width="2517" height="282" key="GridCell.Tab.0.bottom" timestamp="1591308463750">
       <screen x="1920" y="0" width="2560" height="1040" />
     </state>
@@ -121,13 +112,13 @@
       <screen x="1920" y="0" width="2560" height="1040" />
     </state>
     <state width="2517" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.2560.1040@1920.0.2560.1040" timestamp="1591308463750" />
-    <state width="640" height="204" key="ImportCMakeProjectWizard.bottomPanel" timestamp="1591308463728">
+    <state width="640" height="204" key="ImportCMakeProjectWizard.bottomPanel" timestamp="1591316293341">
       <screen x="1920" y="0" width="2560" height="1040" />
     </state>
-    <state width="640" height="204" key="ImportCMakeProjectWizard.bottomPanel/0.0.1920.1040/1920.0.2560.1040@1920.0.2560.1040" timestamp="1591308463728" />
-    <state width="640" height="476" key="ImportCMakeProjectWizard.topPanel" timestamp="1591308463728">
+    <state width="640" height="204" key="ImportCMakeProjectWizard.bottomPanel/0.0.1920.1040/1920.0.2560.1040@1920.0.2560.1040" timestamp="1591316293341" />
+    <state width="640" height="476" key="ImportCMakeProjectWizard.topPanel" timestamp="1591316293341">
       <screen x="1920" y="0" width="2560" height="1040" />
     </state>
-    <state width="640" height="476" key="ImportCMakeProjectWizard.topPanel/0.0.1920.1040/1920.0.2560.1040@1920.0.2560.1040" timestamp="1591308463728" />
+    <state width="640" height="476" key="ImportCMakeProjectWizard.topPanel/0.0.1920.1040/1920.0.2560.1040@1920.0.2560.1040" timestamp="1591316293341" />
   </component>
 </project>

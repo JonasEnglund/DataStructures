@@ -1,23 +1,25 @@
 #include "VectorStack.h"
-
-VectorStack::VectorStack() {};
-
-VectorStack::VectorStack(const VectorStack& copyVector) : MyVector(copyVector) {}
+#include <stdexcept>
+#include <cstdlib>
 
 void VectorStack::push(const ValueType& value) {
     this->pushBack(value);
 }
 
 void VectorStack::pop() {
-    this->popBack();
+    if(this->size() == 0)
+        throw std::out_of_range("Empty");
+    else
+        this->popBack();
 }
 
-std::size_t VectorStack::size() const {
+size_t VectorStack::size() const {
     return this->size();
 }
 
-bool VectorStack::isEmpty() {
-    return !this->size();
+bool VectorStack::isEmpty() const {
+    if(size() == 0) return true;
+    else return false;
 }
 
 const ValueType& VectorStack::top() const {

@@ -1,4 +1,5 @@
 #include "Stack.h"
+#include <cstdlib>
 #include "ListStack.h"
 #include "VectorStack.h"
 #include "StackImplementation.h"
@@ -23,7 +24,7 @@ Stack::Stack(StackContainer container)
 	}
 }
 
-Stack::Stack(const ValueType* valueArray, const size_t arraySize, StackContainer container) : _containerType(container)
+Stack::Stack(const ValueType* valueArray, const size_t arraySize, StackContainer container) : Stack(container)
 {
     for(size_t i = 0; i < arraySize; ++i)
         _pimpl->push(valueArray[i]);
@@ -33,12 +34,11 @@ Stack::Stack(const Stack& copyStack) : _containerType(copyStack._containerType)
 {
     switch (_containerType) {
         case StackContainer::List: {
-            size_t newSize = copyStack.size();
-            _pimple = new ListStack(*(dynamic_cast<ListStack*>(copyStack._pimpl)));
+            _pimpl = new ListStack(*static_cast<ListStack*>(copyStack._pimpl));
             break;
         }
         case StackContainer::Vector: {
-            _pimple = new VectorStack(*(dynamic_cast<VectorStack*>(copyStack._pimpl)));
+            _pimpl = new VectorStack(*(static_cast<VectorStack*>(copyStack._pimpl)));
             break;
         }
         default:
@@ -48,19 +48,18 @@ Stack::Stack(const Stack& copyStack) : _containerType(copyStack._containerType)
 
 Stack& Stack::operator=(const Stack& copyStack)
 {
-    if(this == &copyStack) {
+    if(&this->_pimpl == &copyStack._pimpl) {
         return *this;
     }
     delete _pimpl;
     _containerType = copyStack._containerType;
     switch (_containerType) {
         case StackContainer::List: {
-            size_t newSize = copyStack.size();
-            _pimple = new ListStack(*(dynamic_cast<ListStack*>(copyStack._pimpl)));
+            _pimpl = new ListStack(*static_cast<ListStack*>(copyStack._pimpl));
             break;
         }
         case StackContainer::Vector: {
-            _pimple = new VectorStack(*(dynamic_cast<VectorStack*>(copyStack._pimpl)));
+            _pimpl = new VectorStack(*(static_cast<VectorStack*>(copyStack._pimpl)));
             break;
         }
         default:
@@ -96,7 +95,7 @@ bool Stack::isEmpty() const
 
 size_t Stack::size() const
 {
-    return _pimpl->isEmpty();
+    return _pimpl->size();
 }
 
 Stack::Stack(Stack&& moveStack) noexcept {
