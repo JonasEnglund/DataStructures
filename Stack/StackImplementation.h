@@ -1,5 +1,6 @@
 #pragma once
 #include <cstdlib>
+
 // приходится тянуть ValueType во все места,
 // наглядная демонстрация того, почему с шаблонами было бы легче.
 // Ждем, когда дойдете до этого на МиСП.
@@ -7,7 +8,7 @@ using ValueType = double;
 
 // интерфейс для конкретных реализаций контейнера для стека
 class StackImplementation {
-public:
+public:	
 	// добавление в хвост
 	virtual void push(const ValueType& value) = 0;
 	// удаление с хвоста

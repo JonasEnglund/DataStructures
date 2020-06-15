@@ -23,10 +23,18 @@
     <option name="TOOL_WINDOW_SELECTED_CONTENT_INDEX" value="0" />
     <option name="FILTER_BY_CURRENT_PROJECT" value="true" />
     <option name="showStatusBarWidget" value="true" />
+    <treeState key="project">
+      <selectedPath>
+        <pathElement>
+          <option name="myNodeId" value="helperText" />
+          <option name="myNodeType" value="jetbrains.buildServer.tree.descriptors.LinkedTextDescriptor" />
+        </pathElement>
+      </selectedPath>
+    </treeState>
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="Vector" targetName="Vector" />
+      <config projectName="LinkedList" targetName="LinkedList" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -35,7 +43,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55f1aa48-88e0-4765-adc0-4ba7be2f8b87" name="Default Changelist" comment="" />
+    <list default="true" id="57a41f25-8364-4fe4-af3e-573045ea75e8" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,15 +52,14 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="MacroExpansionManager">
-    <option name="directoryName" value="5ijqktsm" />
+    <option name="directoryName" value="nj3om416" />
   </component>
-  <component name="ProjectId" id="1cjVkw2qcJ5hlhZdFxKS7voFTpe" />
+  <component name="ProjectId" id="1cjPKlXx7OoMnt1Z8IfPeZj1umD" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -66,7 +73,7 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunManager">
-    <configuration name="Vector" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Vector" TARGET_NAME="Vector" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Vector" RUN_TARGET_NAME="Vector">
+    <configuration name="LinkedList" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="LinkedList" TARGET_NAME="LinkedList" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="LinkedList" RUN_TARGET_NAME="LinkedList">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -77,14 +84,15 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="55f1aa48-88e0-4765-adc0-4ba7be2f8b87" name="Default Changelist" comment="" />
-      <created>1591042136366</created>
+      <changelist id="57a41f25-8364-4fe4-af3e-573045ea75e8" name="Default Changelist" comment="" />
+      <created>1591038967035</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1591042136366</updated>
-      <workItem from="1591042138446" duration="870000" />
-      <workItem from="1591303686605" duration="2709000" />
-      <workItem from="1591308465681" duration="7815000" />
+      <updated>1591038967035</updated>
+      <workItem from="1591038968375" duration="3163000" />
+      <workItem from="1591316295366" duration="9188000" />
+      <workItem from="1591468149228" duration="608000" />
+      <workItem from="1592230353225" duration="1745000" />
     </task>
     <servers />
   </component>
@@ -92,33 +100,17 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2980" y="275" key="FileChooserDialogImpl" timestamp="1591316291749">
+    <state x="2980" y="275" key="FileChooserDialogImpl" timestamp="1592232099259">
       <screen x="1920" y="0" width="2560" height="1040" />
     </state>
-    <state x="2980" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.2560.1040@1920.0.2560.1040" timestamp="1591316291749" />
-    <state width="2517" height="282" key="GridCell.Tab.0.bottom" timestamp="1591308463750">
+    <state x="2980" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.2560.1040@1920.0.2560.1040" timestamp="1592232099259" />
+    <state width="640" height="204" key="ImportCMakeProjectWizard.bottomPanel" timestamp="1591042134939">
       <screen x="1920" y="0" width="2560" height="1040" />
     </state>
-    <state width="2517" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.2560.1040@1920.0.2560.1040" timestamp="1591308463750" />
-    <state width="2517" height="282" key="GridCell.Tab.0.center" timestamp="1591308463750">
+    <state width="640" height="204" key="ImportCMakeProjectWizard.bottomPanel/0.0.1920.1040/1920.0.2560.1040@1920.0.2560.1040" timestamp="1591042134939" />
+    <state width="640" height="476" key="ImportCMakeProjectWizard.topPanel" timestamp="1591042134939">
       <screen x="1920" y="0" width="2560" height="1040" />
     </state>
-    <state width="2517" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.2560.1040@1920.0.2560.1040" timestamp="1591308463750" />
-    <state width="2517" height="282" key="GridCell.Tab.0.left" timestamp="1591308463750">
-      <screen x="1920" y="0" width="2560" height="1040" />
-    </state>
-    <state width="2517" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.2560.1040@1920.0.2560.1040" timestamp="1591308463750" />
-    <state width="2517" height="282" key="GridCell.Tab.0.right" timestamp="1591308463750">
-      <screen x="1920" y="0" width="2560" height="1040" />
-    </state>
-    <state width="2517" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.2560.1040@1920.0.2560.1040" timestamp="1591308463750" />
-    <state width="640" height="204" key="ImportCMakeProjectWizard.bottomPanel" timestamp="1591316293341">
-      <screen x="1920" y="0" width="2560" height="1040" />
-    </state>
-    <state width="640" height="204" key="ImportCMakeProjectWizard.bottomPanel/0.0.1920.1040/1920.0.2560.1040@1920.0.2560.1040" timestamp="1591316293341" />
-    <state width="640" height="476" key="ImportCMakeProjectWizard.topPanel" timestamp="1591316293341">
-      <screen x="1920" y="0" width="2560" height="1040" />
-    </state>
-    <state width="640" height="476" key="ImportCMakeProjectWizard.topPanel/0.0.1920.1040/1920.0.2560.1040@1920.0.2560.1040" timestamp="1591316293341" />
+    <state width="640" height="476" key="ImportCMakeProjectWizard.topPanel/0.0.1920.1040/1920.0.2560.1040@1920.0.2560.1040" timestamp="1591042134939" />
   </component>
 </project>

@@ -68,7 +68,7 @@ size_t MyVector::size() const {
 }
 
 float MyVector::loadFactor(size_t newSize) {
-    return float(newSize)/_capacity;
+    return 1.0 * newSize/_capacity;
 }
 
 float MyVector::loadFactor() {
@@ -106,14 +106,11 @@ MyVector::MyVector(const MyVector &copy) {
 void MyVector::reserve(const size_t capacity) {
     ValueType *_newData = new ValueType[capacity];
 
-    if(_size >= capacity) {
-        for(size_t i = 0; i < _size; ++i)
-            _newData[i] = _data[i];
+    for(size_t i = 0; i < _size; ++i)
+        _newData[i] = _data[i];
+
+    if(_size > capacity)
         _size = capacity;
-    }
-    else
-        for(size_t i = 0; i < _size; ++i)
-            _newData[i] = _data[i];
 
     std::swap(_data, _newData);
     _capacity = capacity;
@@ -216,34 +213,33 @@ void MyVector::popBack() {
         resize(_size);
 }
 void MyVector::erase(const size_t i) {
+    if(_size == 0) throw std::out_of_range("Vector is  empty");
     if(_size <= i) throw std::length_error("Index > size");
 
     for(size_t j = i; j < _size - 1; ++j)
         _data[j] = _data[j + 1];
 
-    popBack();
+    --_size;
+
+    if(loadFactor() <= 1.0/(_coef * _coef))
+        resize(_size);
+    if(_capacity == 0)
+        reserve(1);
 }
 
 void MyVector::erase(const size_t index, const size_t len) {
     if(_size < index + len) throw std::out_of_range("Index + lenght > size");
 
-    size_t lenght = len;
-    if(_size < len) lenght = _size;
+    for(size_t i = index; i < index + len; ++i)
+        _data[i] = _data[i + len];
 
-    ValueType* buf = new ValueType[_capacity];
+    _size -= len;
 
-    for(size_t i = 0; i < index; ++i)
-        buf[i] = _data[i];
-    for(size_t i = index + lenght; i < _size; ++i)
-        buf[i - lenght] = _data[i];
-
-    std::swap(_data, buf);
-    _size -= lenght;
-
-    if(loadFactor() <= float(1/(_coef * _coef)))
+    if(loadFactor() <= (1.0/(_coef * _coef)))
         resize(_size);
 
-    delete[] buf;
+    if(_capacity == 0)
+        reserve(1);
 }
 
 long long int MyVector::find(const ValueType &value, bool isBegin) const {

@@ -1,26 +1,29 @@
 #include "ListStack.h"
 #include <cstdlib>
 #include <stdexcept>
-
-void ListStack::push(const ValueType& value) {
-    this->pushFront(value);
+void ListStack::push(const ValueType& value)
+{
+	this->pushFront(value);
 }
 
-void ListStack::pop() {
-    if(this->size() != 0)
-        this->removeFront();
-    else
-        throw std::out_of_range("Empty");
+size_t ListStack::size() const
+{
+    return LinkedList::size();
+
+}
+void ListStack::pop()
+{
+    if(ListStack::size() == 0) throw std::out_of_range("Empty");
+    else removeFront();
 }
 
-size_t ListStack::size() const {
-    return this->size();
+bool ListStack::isEmpty() const
+{
+	if (LinkedList::size() == 0) return true;
+	else return false;
 }
 
-bool ListStack::isEmpty() const {
-    return !this->size();
-}
-
-const ValueType& ListStack::top() const {
+const ValueType& ListStack::top() const
+{
     return (*this)[0];
 }

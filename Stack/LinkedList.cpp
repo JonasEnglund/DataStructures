@@ -21,31 +21,26 @@ void LinkedList::Node::removeNext()
 {
     if(this->next == nullptr)
         throw std::invalid_argument("Nothing to remove");
-	Node* removeNode = this->next;
-	Node* newNext = removeNode->next;
-	delete removeNode;
-	this->next = newNext;
+    else {
+        Node *removeNode = this->next;
+        Node *newNext = removeNode->next;
+        delete removeNode;
+        this->next = newNext;
+    }
 }
+
 
 LinkedList::LinkedList(): _head(nullptr), _size(0) {}
 
 LinkedList::LinkedList(const LinkedList& copyList)
 {
-    if(&copyList == nullptr) throw std::invalid_argument("CopyList is empty");
-
-    if(copyList._head == nullptr) {
-        this->_size = 0;
-        this->_head = nullptr;
-        return;
-    }
-
 	this->_size = copyList._size;
 	this->_head = new Node(copyList._head->value);
 	Node* currentNode = this->_head;
 	Node* currentCopyNode = copyList._head;
 
 	while (currentCopyNode->next != nullptr) {
-        currentNode->next = new Node(currentCopyNode->value);
+        currentNode->next = new Node(currentCopyNode->next->value);
         currentNode = currentNode->next;
         currentCopyNode = currentCopyNode->next;
 	}
@@ -53,14 +48,7 @@ LinkedList::LinkedList(const LinkedList& copyList)
 
 LinkedList& LinkedList::operator=(const LinkedList& copyList)
 {
-    if(&copyList == nullptr) throw  std::invalid_argument("Wrong copyList");
     if (this == &copyList) return *this;
-
-    if(copyList._head == nullptr) {
-        _size = 0;
-        _head = nullptr;
-        return *this;
-    }
 
 	LinkedList bufList(copyList);
 	this->_size = bufList._size;
@@ -169,7 +157,6 @@ void LinkedList::remove(const size_t pos)
         removeBack();
         return;
     }
-
     Node *current = this->_head;
     int count = 0;
     while (count != pos - 1) {
@@ -193,16 +180,24 @@ void LinkedList::removeNextNode(Node* node)
 }
 
 void LinkedList::removeBack() {
-    if (_size == 1) removeFront();
-    else delete getNode(_size - 2)->next;
-    --_size;
+    if (_size == 1) {
+        delete _head;
+        _size = 0;
+        _head = nullptr;
+    }
+    else {
+        delete getNode(_size - 2)->next;
+        getNode(_size - 2)->next = nullptr;
+        --_size;
+    }
 }
 
 void LinkedList::removeFront() {
-    if(_head == nullptr) return;
+    if(_head == nullptr) throw std::out_of_range("Empty");
     Node *save = _head;
     _head = _head->next;
     delete save;
+    save = nullptr;
     --_size;
 }
 
@@ -232,31 +227,31 @@ LinkedList::Node* LinkedList::findNode(const ValueType& value) const
 
 void LinkedList::reverse()
 {
-    if(_head == nullptr) return;
-    Node *current = _head, *next, *prev = nullptr;
-    while(current != nullptr) {
-        next = current->next;
+    Node *current = _head, *next = current->next, *prev = nullptr;
+    while(next != nullptr) {
         current->next = prev;
         prev = current;
         current = next;
+        next = current->next;
     }
-    _head = prev;
+    current->next = prev;
+    _head = current;
 }
 
 LinkedList LinkedList::reverse() const
 {
-    LinkedList list(*this);
-    list.reverse();
-    list._size = _size;
-
-    return list;
+    LinkedList* newList = new LinkedList;
+    *newList = *this;
+    newList->reverse();
+    return *newList;
 }
 
 LinkedList LinkedList::getReverseList() const
 {
-    LinkedList list(*this);
-    list.reverse();
-    return list;
+    LinkedList* newList = new LinkedList;
+    *newList = *this;
+    newList->reverse();
+    return *newList;
 }
 
 size_t LinkedList::size() const

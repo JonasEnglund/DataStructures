@@ -31,10 +31,10 @@ stdexcept
 C:/Laba/zrl/DataStructures/Stack/ListStack.h
 cstdlib
 -
-LinkedList.h
-C:/Laba/zrl/DataStructures/Stack/LinkedList.h
 StackImplementation.h
 C:/Laba/zrl/DataStructures/Stack/StackImplementation.h
+LinkedList.h
+C:/Laba/zrl/DataStructures/Stack/LinkedList.h
 
 C:/Laba/zrl/DataStructures/Stack/MyVector.cpp
 MyVector.h
@@ -79,16 +79,16 @@ cstdlib
 C:/Laba/zrl/DataStructures/Stack/VectorStack.cpp
 VectorStack.h
 C:/Laba/zrl/DataStructures/Stack/VectorStack.h
-stdexcept
--
 cstdlib
+-
+stdexcept
 -
 
 C:/Laba/zrl/DataStructures/Stack/VectorStack.h
 cstdlib
 -
-MyVector.h
-C:/Laba/zrl/DataStructures/Stack/MyVector.h
 StackImplementation.h
 C:/Laba/zrl/DataStructures/Stack/StackImplementation.h
+MyVector.h
+C:/Laba/zrl/DataStructures/Stack/MyVector.h
 

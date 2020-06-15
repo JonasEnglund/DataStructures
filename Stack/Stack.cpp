@@ -1,8 +1,8 @@
 #include "Stack.h"
-#include <cstdlib>
 #include "ListStack.h"
 #include "VectorStack.h"
 #include "StackImplementation.h"
+#include <cstdlib>
 
 #include <stdexcept>
 
@@ -30,7 +30,7 @@ Stack::Stack(const ValueType* valueArray, const size_t arraySize, StackContainer
         _pimpl->push(valueArray[i]);
 }
 
-Stack::Stack(const Stack& copyStack) : _containerType(copyStack._containerType)
+Stack::Stack(const Stack& copyStack) : Stack(copyStack._containerType)
 {
     switch (_containerType) {
         case StackContainer::List: {
@@ -96,19 +96,4 @@ bool Stack::isEmpty() const
 size_t Stack::size() const
 {
     return _pimpl->size();
-}
-
-Stack::Stack(Stack&& moveStack) noexcept {
-    _containerType = moveStack._containerType;
-    delete _pimpl;
-    _pimpl = moveStack._pimpl;
-    moveStack._pimpl = nullptr;
-}
-
-Stack& Stack::operator=(Stack&& moveStack) noexcept {
-    _containerType = moveStack._containerType;
-    delete _pimpl;
-    _pimpl = moveStack._pimpl;
-    moveStack._pimpl = nullptr;
-    return *this;
 }

@@ -35,17 +35,36 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97c68964-a6f0-4fa8-8a8e-bd8ca44e83e4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../LinkedList/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../LinkedList/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LinkedList/LinkedList.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../LinkedList/LinkedList.cpp" afterDir="false" />
+    <list default="true" id="deca814a-698d-4b18-9629-39d02c6443b9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LinkedList.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/LinkedList.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ListStack.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ListStack.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ListStack.h" beforeDir="false" afterPath="$PROJECT_DIR$/ListStack.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyVector.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/MyVector.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Stack.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Stack.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Stack.h" beforeDir="false" afterPath="$PROJECT_DIR$/Stack.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StackImplementation.h" beforeDir="false" afterPath="$PROJECT_DIR$/StackImplementation.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VectorStack.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/VectorStack.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VectorStack.h" beforeDir="false" afterPath="$PROJECT_DIR$/VectorStack.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vector/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Vector/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.16.5/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.16.5/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.16.5/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.16.5/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.16.5/CompilerIdC/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.16.5/CompilerIdC/a.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.16.5/CompilerIdCXX/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.16.5/CompilerIdCXX/a.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Stack.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Stack.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Stack.dir/LinkedList.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Stack.dir/LinkedList.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Stack.dir/ListStack.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Stack.dir/ListStack.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Stack.dir/MyVector.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Stack.dir/MyVector.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Stack.dir/Stack.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Stack.dir/Stack.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Stack.dir/VectorStack.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Stack.dir/VectorStack.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Stack.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Stack.dir/objects.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vector/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vector/MyVector.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Vector/MyVector.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,9 +80,9 @@
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="MacroExpansionManager">
-    <option name="directoryName" value="ckj6w2x6" />
+    <option name="directoryName" value="5tlm0s8f" />
   </component>
-  <component name="ProjectId" id="1dMJsSzufhKHyPhum3JGPaaxsEb" />
+  <component name="ProjectId" id="1dMTWCZTvv8TypCohIeAvX7kehy" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -88,13 +107,14 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="97c68964-a6f0-4fa8-8a8e-bd8ca44e83e4" name="Default Changelist" comment="" />
-      <created>1592229234070</created>
+      <changelist id="deca814a-698d-4b18-9629-39d02c6443b9" name="Default Changelist" comment="" />
+      <created>1592233991719</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1592229234070</updated>
-      <workItem from="1592229235315" duration="1040000" />
-      <workItem from="1592230277112" duration="75000" />
+      <updated>1592233991719</updated>
+      <workItem from="1592233992863" duration="2261000" />
+      <workItem from="1592236373401" duration="3465000" />
+      <workItem from="1592242020153" duration="302000" />
     </task>
     <servers />
   </component>
@@ -102,13 +122,17 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2980" y="275" key="FileChooserDialogImpl" timestamp="1592230350798">
+    <state x="2980" y="275" key="FileChooserDialogImpl" timestamp="1592242017587">
       <screen x="1920" y="0" width="2560" height="1040" />
     </state>
-    <state x="2980" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.2560.1040@1920.0.2560.1040" timestamp="1592230350798" />
-    <state x="2701" y="165" key="SettingsEditor" timestamp="1592230313790">
+    <state x="2980" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.2560.1040@1920.0.2560.1040" timestamp="1592242017587" />
+    <state x="2701" y="165" key="SettingsEditor" timestamp="1592242321145">
       <screen x="1920" y="0" width="2560" height="1040" />
     </state>
-    <state x="2701" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.2560.1040@1920.0.2560.1040" timestamp="1592230313790" />
+    <state x="2701" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.2560.1040@1920.0.2560.1040" timestamp="1592242321145" />
+    <state x="2856" y="240" key="run.anything.popup" timestamp="1592235357532">
+      <screen x="1920" y="0" width="2560" height="1040" />
+    </state>
+    <state x="2856" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.2560.1040@1920.0.2560.1040" timestamp="1592235357532" />
   </component>
 </project>
