@@ -75,6 +75,7 @@ Stack::~Stack()
 
 void Stack::push(const ValueType& value)
 {
+
     _pimpl->push(value);
 }
 

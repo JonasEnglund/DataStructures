@@ -211,6 +211,8 @@ void MyVector::popBack() {
 
     if (loadFactor() <= 1/((_coef * _coef)))
         resize(_size);
+    if(_capacity == 0)
+        reserve(1);
 }
 void MyVector::erase(const size_t i) {
     if(_size == 0) throw std::out_of_range("Vector is  empty");

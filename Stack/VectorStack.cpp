@@ -23,5 +23,5 @@ bool VectorStack::isEmpty() const {
 }
 
 size_t VectorStack::size() const {
-	return  MyVector::size();
+	return MyVector::size();
 }
